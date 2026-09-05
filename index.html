@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MindX Cinema</title>
+  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="./styles/home.css" />
+</head>
+<body>
+  <div class="navbar">
+    <a href="./index.html" class="logo">Mind<span class="highlight">X</span> Cinema</a>
+    <nav>
+      <a href="./search.html">Tìm kiếm</a>
+      <div id="avatar-action-container"></div>
+    </nav>
+  </div>
+
+  <div class="hero-section">
+    <img id="hero-image" class="hero-image" alt="" />
+    <div class="hero-info">
+      <h2 id="hero-title"></h2>
+      <p id="hero-description"></p>
+      <button id="watch-now-btn">Xem ngay</button>
+    </div>
+  </div>
+
+  <main>
+    <h2>Phim nổi bật</h2>
+    <div id="movie-list"></div>
+    <div id="ai-suggestions"></div>
+  </main>
+
+  <footer>
+    <p>&copy; MindX School</p>
+  </footer>
+
+  <script type="module" src="./scripts/auth.js"></script>
+  <script type="module" src="./scripts/home.js"></script>
+</body>
+</html>
