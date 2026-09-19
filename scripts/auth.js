@@ -11,7 +11,8 @@ if (currentUser) {
     localStorage.removeItem("currentUser");
     location.href = "./login.html";
   });
-} else {
+} 
+else {
   container.innerHTML = ` 
     <a href="./login.html" id="login-btn">Đăng nhập</a>
   `;

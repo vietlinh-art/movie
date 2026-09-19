@@ -20,4 +20,4 @@ form.addEventListener("submit", async (e) => {
       </div>
     </div>
   `).join("");
-}); 
+});

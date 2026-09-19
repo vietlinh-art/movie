@@ -1,34 +1,35 @@
-const form = document.getElementById("register-form");
+const form = document.getElementById("register-form")
 
-// lang nghe su kien submit
+//lắng nghe sự kiện submit
 form.addEventListener("submit", (e) => {
-  e.preventDefault();
+    e.preventDefault()
 
-  // lay thong tin nhap tren cac o
-  const username = document.getElementById("username").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value;
+    //lấy thông tin nhập trên các ô
+    const username = document.getElementById("username").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
 
-  const lowerCaseLetter = /[a-z]/g;
-  const upperCaseLetter = /[A-Z]/g;
-  const numbers = /[0-9]/g;
+    const lowerCaseLetter = /[a-z]/g;
+    const upperCaseLetter = /[A-Z]/g;
+    const numbers = /[0-9]/g;
 
-  if (username.length < 6) {
-    alert("Tên đăng nhập phải ít nhất 6 ký tự");
-  } else if (password.length < 8) {
-    alert("Mật khẩu phải ít nhất 8 ký tự");
-  } else if (!password.match(lowerCaseLetter)) {
-    alert("Mật khẩu cần có chữ thường");
-  } else if (!password.match(upperCaseLetter)) {
-    alert("Mật khẩu cần có chữ hoa");
-  } else if (!password.match(numbers)) {
-    alert("Mật khẩu cần có số hoặc ký tự đặc biệt");
-  } else {
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    users.push({ username, email, password });
-    localStorage.setItem("users", JSON.stringify(users));
+    if (username.length < 6) {
+        alert("Tên đăng nhập phải ít nhất 6 ký tự");
+    } else if (password.length < 8) {
+        alert("Mật khẩu phải ít nhất 8 ký tự");
+    } else if (!password.match(lowerCaseLetter)) {
+        alert("Mật khẩu cần có chữ thường");
+    } else if (!password.match(upperCaseLetter)) {
+        alert("Mật khẩu cần có chữ hoa");
+    } else if (!password.match(numbers)) {
+        alert("Mật khẩu cần có số hoặc ký tự đặc biệt");
+    } else {
+        const users = JSON.parse(localStorage.getItem("users")) || [];
+        users.push({ username, email, password });
+        localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Tạo tài khoản thành công! Vui lòng đăng nhập.");
-    location.href = "./login.html";
-  }
-});
+        alert("Tạo tài khoản thành công! Vui lòng đăng nhập.");
+        location.href = "./login.html";
+    }
+
+})
